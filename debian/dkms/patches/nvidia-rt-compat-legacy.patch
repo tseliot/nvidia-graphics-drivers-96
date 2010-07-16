@@ -1,0 +1,109 @@
+diff -Nurp nv.orig/os-interface.c nv/os-interface.c
+--- nv.orig/os-interface.c	2009-06-26 03:59:39.000000000 +0200
++++ nv/os-interface.c	2009-10-25 12:51:50.542528175 +0100
+@@ -75,7 +75,7 @@ typedef struct os_sema_s
+ {
+     struct completion  completion;
+ #if defined(CONFIG_PREEMPT_RT)
+-    raw_spinlock_t     lock;
++    atomic_spinlock_t     lock;
+ #else
+     spinlock_t         lock;
+ #endif
+@@ -101,7 +101,11 @@ RM_STATUS NV_API_CALL os_alloc_sema
+ 
+     os_sema = (os_sema_t *)*ppSema;
+     init_completion(&os_sema->completion);
++#if defined(CONFIG_PREEMPT_RT)
++    atomic_spin_lock_init(&os_sema->lock);
++#else
+     spin_lock_init(&os_sema->lock);
++#endif
+     os_sema->count = 1;
+ 
+     return RM_OK;
+@@ -140,18 +144,30 @@ RM_STATUS NV_API_CALL os_acquire_sema
+     os_sema_t *os_sema = (os_sema_t *)pSema;
+     unsigned long old_irq;
+ 
++#if defined(CONFIG_PREEMPT_RT)
++    atomic_spin_lock_irqsave(&os_sema->lock, old_irq);
++#else
+     spin_lock_irqsave(&os_sema->lock, old_irq);
++#endif
+     if (os_sema->count <= 0)
+     {
+         os_sema->count--;
++#if defined(CONFIG_PREEMPT_RT)
++        atomic_spin_unlock_irqrestore(&os_sema->lock, old_irq);
++#else
+         spin_unlock_irqrestore(&os_sema->lock, old_irq);
++#endif
+         wait_for_completion(&os_sema->completion);
+     }
+     else
+     {
+         os_sema->count--;
+         rm_disable_interrupts();
++#if defined(CONFIG_PREEMPT_RT)
++        atomic_spin_unlock_irqrestore(&os_sema->lock, old_irq);
++#else
+         spin_unlock_irqrestore(&os_sema->lock, old_irq);
++#endif
+     }
+ 
+     return RM_OK;
+@@ -174,17 +190,29 @@ BOOL NV_API_CALL os_cond_acquire_sema
+     os_sema_t *os_sema = (os_sema_t *)pSema;
+     unsigned long old_irq;
+ 
++#if defined(CONFIG_PREEMPT_RT)
++    atomic_spin_lock_irqsave(&os_sema->lock, old_irq);
++#else
+     spin_lock_irqsave(&os_sema->lock, old_irq);
++#endif
+     if (os_sema->count <= 0)
+     {
++#if defined(CONFIG_PREEMPT_RT)
++        atomic_spin_unlock_irqrestore(&os_sema->lock, old_irq);
++#else
+         spin_unlock_irqrestore(&os_sema->lock, old_irq);
++#endif
+         return FALSE;
+     }
+     else
+     {
+         os_sema->count--;
+         rm_disable_interrupts();
++#if defined(CONFIG_PREEMPT_RT)
++        atomic_spin_unlock_irqrestore(&os_sema->lock, old_irq);
++#else
+         spin_unlock_irqrestore(&os_sema->lock, old_irq);
++#endif
+         return TRUE;
+     }
+ 
+@@ -208,7 +236,11 @@ RM_STATUS NV_API_CALL os_release_sema
+     unsigned long old_irq;
+     BOOL doWakeup;
+ 
++#if defined(CONFIG_PREEMPT_RT)
++    atomic_spin_lock_irqsave(&os_sema->lock, old_irq);
++#else
+     spin_lock_irqsave(&os_sema->lock, old_irq);
++#endif
+     if (os_sema->count < 0)
+     {
+         doWakeup = TRUE;
+@@ -219,7 +251,11 @@ RM_STATUS NV_API_CALL os_release_sema
+         rm_enable_interrupts();
+     }
+     os_sema->count++;
++#if defined(CONFIG_PREEMPT_RT)
++    atomic_spin_unlock_irqrestore(&os_sema->lock, old_irq);
++#else
+     spin_unlock_irqrestore(&os_sema->lock, old_irq);
++#endif
+ 
+     if (doWakeup)
+         complete(&os_sema->completion);
