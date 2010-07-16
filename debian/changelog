@@ -1,3 +1,11 @@
+nvidia-graphics-drivers-96 (96.43.18-0ubuntu1) maverick; urgency=low
+
+  * New upstream release:
+    - Fixed a bug that could cause X.Org xserver >= 1.7 to hang when
+      restarted.
+
+ -- Alberto Milone <alberto.milone@canonical.com>  Fri, 16 Jul 2010 12:23:58 +0200
+
 nvidia-graphics-drivers-96 (96.43.17-0ubuntu1) lucid; urgency=low
 
   * New upstream release:
