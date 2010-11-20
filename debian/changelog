@@ -6,8 +6,10 @@ nvidia-graphics-drivers-96 (96.43.19-0ubuntu1) UNRELEASED; urgency=low
     - Add support for X.Org xserver 1.9 (LP: #626974).
   * debian/nvidia-96.postinst{.in}:
     - Call dpkg-trigger with "--by-package".
+  * debian/dkms/patches/nvidia-2.6.36-ioctl.patch:
+    - Add compatibility with kernel 2.6.36.
 
- -- Alberto Milone <alberto.milone@canonical.com>  Sat, 20 Nov 2010 16:25:15 +0100
+ -- Alberto Milone <alberto.milone@canonical.com>  Sat, 20 Nov 2010 16:58:40 +0100
 
 nvidia-graphics-drivers-96 (96.43.18-0ubuntu1) maverick; urgency=low
 
