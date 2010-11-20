@@ -16,6 +16,6 @@
 /usr/share/lintian/overrides
 /usr/lib/nvidia-96/xorg
 /usr/lib/nvidia-96/xorg
-/usr/src/nvidia-96-96.43.18
-/usr/src/nvidia-96-96.43.18/patches
+/usr/src/nvidia-96-96.43.19
+/usr/src/nvidia-96-96.43.19/patches
 /lib/nvidia-96
