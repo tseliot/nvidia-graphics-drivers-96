@@ -4,8 +4,10 @@ nvidia-graphics-drivers-96 (96.43.19-0ubuntu1) UNRELEASED; urgency=low
     - Switch to new xsfbs variables to get the server ABI
       (LP: #616214).
     - Add support for X.Org xserver 1.9 (LP: #626974).
+  * debian/nvidia-96.postinst{.in}:
+    - Call dpkg-trigger with "--by-package".
 
- -- Alberto Milone <alberto.milone@canonical.com>  Sat, 20 Nov 2010 16:22:33 +0100
+ -- Alberto Milone <alberto.milone@canonical.com>  Sat, 20 Nov 2010 16:25:15 +0100
 
 nvidia-graphics-drivers-96 (96.43.18-0ubuntu1) maverick; urgency=low
 
