@@ -1,4 +1,6 @@
 debian/nvidia-96.override                 usr/share/lintian/overrides
+#Blacklist some card ids from GRUB gfxpayload=keep
+debian/nvidia-96.grub-gfxpayload          /usr/share/nvidia-96
 
 NVIDIA-Linux-x86_64-96.43.19-pkg2/usr/X11R6/lib/modules/drivers/nvidia_drv.so /usr/lib/nvidia-96/xorg
 NVIDIA-Linux-x86_64-96.43.19-pkg2/usr/X11R6/lib/modules/extensions/libglx.so.96.43.19 /usr/lib/nvidia-96/xorg

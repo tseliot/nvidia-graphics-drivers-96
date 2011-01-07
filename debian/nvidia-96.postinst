@@ -119,11 +119,17 @@ case "$1" in
             --slave /etc/xdg/autostart/nvidia-autostart.desktop nvidia-autostart.desktop /usr/share/nvidia-96/nvidia-autostart.desktop \
             --slave /usr/lib/xorg/modules/drivers/nvidia_drv.so nvidia_drv /usr/lib/nvidia-96/xorg/nvidia_drv.so \
             --slave /etc/modprobe.d/nvidia-graphics-drivers.conf nvidia_modconf /lib/nvidia-96/modprobe.conf \
-            --slave /usr/lib/xorg/extra-modules xorg_extra_modules /usr/lib/nvidia-96/xorg
+            --slave /usr/lib/xorg/extra-modules xorg_extra_modules /usr/lib/nvidia-96/xorg \
+            --slave /usr/share/grub-gfxpayload-lists/blacklist/10_$PACKAGE_NAME grub_fb_blacklist /usr/share/nvidia-96/nvidia-96.grub-gfxpayload
 
         # ldconfig needs to be run immediately as we're changing /etc/ld.so.conf.d/ with
         # alternatives.
         LDCONFIG_NOTRIGGER=y ldconfig
+
+        # Update the grub gfxpayload blacklist
+        if which update-grub-gfxpayload >/dev/null 2>&1; then
+            update-grub-gfxpayload
+        fi
 
         # Trigger gmenu so that the icons will show up in the menu
         dpkg-trigger --by-package=$PACKAGE_NAME gmenucache || true
