@@ -119,11 +119,17 @@ case "$1" in
             --slave #AUTOSTARTDIR#/#AUTOSTARTFILE# nvidia-autostart.desktop #PKGDATADIR#/#AUTOSTARTFILE# \
             --slave #LIBDIR#/xorg/modules/drivers/nvidia_drv.so nvidia_drv #PKGDRIVERSDIR#/nvidia_drv.so \
             --slave #SYSCONFDIR#/modprobe.d/nvidia-graphics-drivers.conf nvidia_modconf #PKGLIBCONFDIR#/modprobe.conf \
-            --slave #XORGEXTRA# xorg_extra_modules #NVIDIAEXTENSION#
+            --slave #XORGEXTRA# xorg_extra_modules #NVIDIAEXTENSION# \
+            --slave #GRUBBLKLISTDIR#/10_$PACKAGE_NAME grub_fb_blacklist #PKGDATADIR#/#DRIVERNAME#.grub-gfxpayload
 
         # ldconfig needs to be run immediately as we're changing /etc/ld.so.conf.d/ with
         # alternatives.
         LDCONFIG_NOTRIGGER=y ldconfig
+
+        # Update the grub gfxpayload blacklist
+        if which update-grub-gfxpayload >/dev/null 2>&1; then
+            update-grub-gfxpayload
+        fi
 
         # Trigger gmenu so that the icons will show up in the menu
         dpkg-trigger --by-package=$PACKAGE_NAME gmenucache || true

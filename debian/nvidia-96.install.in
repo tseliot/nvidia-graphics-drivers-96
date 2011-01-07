@@ -1,4 +1,6 @@
 debian/#DRIVERNAME#.override                 usr/share/lintian/overrides
+#Blacklist some card ids from GRUB gfxpayload=keep
+debian/#DRIVERNAME#.grub-gfxpayload          #PKGDATADIR#
 
 #DIRNAME#/usr/X11R6/lib/modules/drivers/nvidia_drv.so #PKGDRIVERSDIR#
 #DIRNAME#/usr/X11R6/lib/modules/extensions/libglx.so.#VERSION# #NVIDIAEXTENSION#
