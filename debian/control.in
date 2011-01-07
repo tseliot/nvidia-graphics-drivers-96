@@ -3,7 +3,7 @@ Section: restricted/misc
 Priority: optional
 Maintainer: Ubuntu Core Developers <ubuntu-devel-discuss@lists.ubuntu.com>
 Build-Depends: debhelper (>> 4.0.0), sed (>> 3.0), libxext6, bzip2,
- xserver-xorg-dev (>= 2:1.4), execstack, cdbs
+ xserver-xorg-dev (>= 2:1.4), execstack, cdbs, dh-modaliases
 Standards-Version: 3.8.0
 
 Package: #DRIVERNAME#
@@ -12,6 +12,9 @@ Depends: x11-common (>= 1:7.0.0), make, sed (>> 3.0), dkms, linux-libc-dev, libc
  linux-headers-generic | linux-headers, patch, acpid, ${shlibs:Depends}
 Recommends: nvidia-settings
 Provides: ${xviddriver:Provides}
+Conflicts: nvidia-96-modaliases
+Replaces: nvidia-96-modaliases
+XB-Modaliases: ${modaliases}
 Description: NVIDIA binary Xorg driver, kernel module and VDPAU library
  The binary driver provide optimized hardware acceleration of OpenGL
  applications via a direct-rendering X Server. AGP, PCIe, SLI, TV-out
@@ -36,13 +39,6 @@ Description: NVIDIA binary Xorg driver development files
  .
  For more information on this source package visit NVIDIA's homepage
  at http://www.nvidia.com/ .
-
-Package: #DRIVERNAME#-modaliases
-Section: admin
-Architecture: i386 amd64 lpia
-Description: Modaliases for the NVIDIA binary X.Org driver
- The modaliases provide a list of pci id's which makes it possible to
- detect the model of a graphic card.
 
 Package: nvidia-glx-96
 Architecture: i386 amd64 lpia

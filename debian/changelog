@@ -1,3 +1,17 @@
+nvidia-graphics-drivers-96 (96.43.19-0ubuntu3) natty; urgency=low
+
+  * Move from separate modalias file package to using a package header:
+    - debian/control.in, debian/rules: Drop -modaliases package.
+    - debian/control.in: Add XB-Modaliases header and dh-modaliases build
+      dependency.
+    - debian/rules: Build the modalias list to
+      debian/nvidia-96.modaliases, where dh_modaliases picks it up, and
+      invoke dh_modaliases.
+    - debian/control.in: Add Conflicts:/Replaces: to nvidia-96-modaliases, so
+      that the obsolete modaliases package gets cleaned up on upgrade.
+
+ -- Martin Pitt <martin.pitt@ubuntu.com>  Sat, 18 Dec 2010 19:29:19 +0100
+
 nvidia-graphics-drivers-96 (96.43.19-0ubuntu2) natty; urgency=low
 
   * Rebuild the package for Natty (LP: #681208).
