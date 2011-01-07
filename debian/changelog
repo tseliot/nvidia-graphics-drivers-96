@@ -1,3 +1,9 @@
+nvidia-graphics-drivers-96 (96.43.19-0ubuntu4) UNRELEASED; urgency=low
+
+  * 
+
+ -- Alberto Milone <alberto.milone@canonical.com>  Fri, 07 Jan 2011 13:40:26 +0100
+
 nvidia-graphics-drivers-96 (96.43.19-0ubuntu3) natty; urgency=low
 
   * Move from separate modalias file package to using a package header:
