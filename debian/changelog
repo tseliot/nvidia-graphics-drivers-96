@@ -1,4 +1,4 @@
-nvidia-graphics-drivers-96 (96.43.19-0ubuntu4) UNRELEASED; urgency=low
+nvidia-graphics-drivers-96 (96.43.19-0ubuntu4) natty; urgency=low
 
   * debian/nvidia-96.prerm{.in}:
     - Call dpkg-trigger with --by-package=$PACKAGE_NAME.
@@ -12,7 +12,7 @@ nvidia-graphics-drivers-96 (96.43.19-0ubuntu4) UNRELEASED; urgency=low
       In practice this means that you can replace any part of the ID string
       with .* to match anything. 
 
- -- Alberto Milone <alberto.milone@canonical.com>  Fri, 07 Jan 2011 15:03:34 +0100
+ -- Alberto Milone <alberto.milone@canonical.com>  Fri, 07 Jan 2011 15:05:50 +0100
 
 nvidia-graphics-drivers-96 (96.43.19-0ubuntu3) natty; urgency=low
 
