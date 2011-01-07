@@ -1,3 +1,9 @@
+nvidia-graphics-drivers-96 (96.43.19-0ubuntu5) natty; urgency=low
+
+  * Remove .patch files that were accidentally uploaded.
+
+ -- Alberto Milone <alberto.milone@canonical.com>  Fri, 07 Jan 2011 15:11:42 +0100
+
 nvidia-graphics-drivers-96 (96.43.19-0ubuntu4) natty; urgency=low
 
   * debian/nvidia-96.prerm{.in}:
