@@ -3,8 +3,8 @@
 # Copyright (C) 2009 Canonical Ltd
 # Authors: Alberto Milone
 #
-# This file on the Mandriva nvidia packages, on Ubuntu's previous
-# nvidia packaging scripts and on Ubuntu's fglrx scripts.
+# This file is based on the Mandriva nvidia packages, on Ubuntu's
+# previous nvidia packaging scripts and on Ubuntu's fglrx scripts.
 
 ############# HOW TO ENABLE A DRIVER ####################
 
