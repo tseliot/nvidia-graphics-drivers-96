@@ -1,8 +1,13 @@
-nvidia-graphics-drivers-96 (96.43.19-0ubuntu6) UNRELEASED; urgency=low
+nvidia-graphics-drivers-96 (96.43.19-0ubuntu6) natty; urgency=low
 
-  * 
+  * debian/control{.in}:
+    - Depend on ${xviddriver:Depends}.
+  * debian/rules:
+    - Manually set video ABI compatibility to 8 so that the driver is not
+      installable in applications such as Jockey or manually.
+    - Correct comment about what the file is based on.
 
- -- Alberto Milone <alberto.milone@canonical.com>  Mon, 28 Feb 2011 13:26:26 +0100
+ -- Alberto Milone <alberto.milone@canonical.com>  Mon, 28 Feb 2011 16:08:17 +0100
 
 nvidia-graphics-drivers-96 (96.43.19-0ubuntu5) natty; urgency=low
 
