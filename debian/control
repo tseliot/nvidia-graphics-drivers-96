@@ -25,7 +25,7 @@ Description: NVIDIA binary Xorg driver, kernel module and VDPAU library
  required by the Xorg driver.
  .
  GPUs ranging from GeForce series 2 (except for GeForce2 GTS/GeForce2 Pro,
- GeForce2 Ti and GeForce2 Ultra) to Geforce series 7 are supported.
+ GeForce2 Ti and GeForce2 Ultra) to GeForce series 7 are supported.
  .
  See /usr/share/doc/nvidia-96/README.txt.gz for a complete list 
  of supported GPUs and PCIIDs
