@@ -1,3 +1,11 @@
+nvidia-graphics-drivers-96 (96.43.19-0ubuntu7) natty; urgency=low
+
+  [ Andrea Carpineti ]
+  * Fix typo in package description Geforce to GeForce
+    (LP: #639955)
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Mon, 07 Mar 2011 17:14:37 -0800
+
 nvidia-graphics-drivers-96 (96.43.19-0ubuntu6) natty; urgency=low
 
   * debian/control{.in}:
