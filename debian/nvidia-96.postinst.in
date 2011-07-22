@@ -105,6 +105,15 @@ case "$1" in
     configure)
         # Deal with alternatives
 
+        if [ -n "$(update-alternatives --list gl_conf 2>/dev/null)" ]; then
+            set -a $(update-alternatives --list gl_conf 2>/dev/null)
+            while [ $# -ge 1 ] && [ "$#" != "configure" ]; do
+                ALTERNATIVE=${1}
+                update-alternatives --remove gl_conf $ALTERNATIVE
+                shift
+            done
+        fi
+
         update-alternatives --force \
             --install #SYSCONFDIR#/ld.so.conf.d/#DEB_HOST_MULTIARCH#_GL.conf #DEB_HOST_MULTIARCH#_gl_conf #LDSOCONF# #ALTPRIORITY# \
             --slave #MANDIR#/nvidia-xconfig.1.gz #DEB_HOST_MULTIARCH#_man_nvidiaxconfig.gz #MANDIR#/alt-#DRIVERNAME#-xconfig.1.gz \
