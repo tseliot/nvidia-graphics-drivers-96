@@ -104,15 +104,11 @@ get_newest_kernel() {
 case "$1" in
     configure)
         # Deal with alternatives
-          
-        current_glconf="$(readlink -e /etc/ld.so.conf.d/GL.conf)"
 
         update-alternatives --force \
             --install /etc/ld.so.conf.d/GL.conf gl_conf /usr/lib/nvidia-96/ld.so.conf 9600 \
             --slave /usr/share/man/man1/nvidia-xconfig.1.gz man_nvidiaxconfig.gz /usr/share/man/man1/alt-nvidia-96-xconfig.1.gz \
-            --slave /usr/share/man/man1/nvidia-smi.1.gz nvidia-smi.1.gz /usr/share/man/man1/alt-nvidia-96-smi.1.gz \
             --slave /usr/share/applications/ubuntu-nvidia-settings.desktop nvidia_desktop /usr/share/nvidia-96/ubuntu-nvidia-settings.desktop \
-            --slave /usr/bin/nvidia-smi nvidia_smi /usr/lib/nvidia-96/bin/nvidia-smi \
             --slave /usr/bin/nvidia-xconfig nvidia_xconfig /usr/lib/nvidia-96/bin/nvidia-xconfig \
             --slave /usr/bin/nvidia-bug-report.sh nvidia_bug_report /usr/lib/nvidia-96/bin/nvidia-bug-report.sh \
             --slave /usr/lib/XvMCConfig xvmcconfig /usr/lib/nvidia-96/XvMCConfig \

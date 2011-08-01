@@ -33,7 +33,7 @@ Description: NVIDIA binary Xorg driver, kernel module and VDPAU library
  
 Package: nvidia-96-dev
 Architecture: i386 amd64 lpia
-Depends: nvidia-96 (>= 96.43.19)
+Depends: nvidia-96 (>= 96.43.20)
 Description: NVIDIA binary Xorg driver development files
  This package contains the NVIDIA binary Xorg driver
  development files.
