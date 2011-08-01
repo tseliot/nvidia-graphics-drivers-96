@@ -1,8 +1,30 @@
-nvidia-graphics-drivers-96 (96.43.20-0ubuntu1) UNRELEASED; urgency=low
+nvidia-graphics-drivers-96 (96.43.20-0ubuntu1) oneiric; urgency=low
 
-  * 
+  * New upstream release:
+    - Fixed a bug that caused freezes and crashes when resizing
+      windows in KDE 4 with desktop effects enabled using X.Org
+      X server version 1.10 or later.
+    - Added support for X.Org xserver 1.10 (LP: #741930).
+  * debian/control.in:
+    - Drop transitional packages.
+  * debian/dkms.conf.in:
+    - Prevent DKMS builds with kernels newer than the ones we ship.
+  * debian/dkms/patches:
+    - Drop obsolete patches.
+  * debian/nvidia-96.postinst.in:
+    - Add support for multi-arch (LP: #798049).
+    - Remove slave link to nvidia-smi since the binary does not
+      exist.
+    - Remove any previous gl_conf alternative.
+  * debian/nvidia-96.README.Debian.in
+    - Update the README with the DKMS OBSOLETE_BY option.
+  * debian/rules:
+    - Do not hardcode the X ABI any more.
+    - Install an empty ld.so.conf for the fake alternative
+    - Remove obsolete instructions from debian/rules
+    - Prevent the build from failing when no patches are available.
 
- -- Alberto Milone <alberto.milone@canonical.com>  Fri, 22 Jul 2011 14:54:58 +0200
+ -- Alberto Milone <alberto.milone@canonical.com>  Mon, 01 Aug 2011 16:18:40 +0200
 
 nvidia-graphics-drivers-96 (96.43.19-0ubuntu8) natty; urgency=low
 
