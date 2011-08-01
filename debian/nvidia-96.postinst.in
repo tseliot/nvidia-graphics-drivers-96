@@ -118,7 +118,6 @@ case "$1" in
             --install #SYSCONFDIR#/ld.so.conf.d/#DEB_HOST_MULTIARCH#_GL.conf #DEB_HOST_MULTIARCH#_gl_conf #LDSOCONF# #ALTPRIORITY# \
             --slave #MANDIR#/nvidia-xconfig.1.gz #DEB_HOST_MULTIARCH#_man_nvidiaxconfig.gz #MANDIR#/alt-#DRIVERNAME#-xconfig.1.gz \
             --slave #DATADIR#/applications/ubuntu-nvidia-settings.desktop #DEB_HOST_MULTIARCH#_nvidia_desktop #PKGDESKDIR#/ubuntu-nvidia-settings.desktop \
-            --slave #BINDIR#/nvidia-smi #DEB_HOST_MULTIARCH#_nvidia_smi #PKGBINDIR#/nvidia-smi \
             --slave #BINDIR#/nvidia-xconfig #DEB_HOST_MULTIARCH#_nvidia_xconfig #PKGBINDIR#/nvidia-xconfig \
             --slave #BINDIR#/nvidia-bug-report.sh #DEB_HOST_MULTIARCH#_nvidia_bug_report #PKGBINDIR#/nvidia-bug-report.sh \
             --slave #LIBDIR#/XvMCConfig #DEB_HOST_MULTIARCH#_xvmcconfig #PKGCONFIGDIR#/XvMCConfig \
