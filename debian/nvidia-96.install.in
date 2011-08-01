@@ -12,7 +12,7 @@ debian/#DRIVERNAME#.grub-gfxpayload          #PKGDATADIR#
 
 #DIRNAME#/usr/X11R6/lib/libXvMCNVIDIA.so.#VERSION#  #PKGLIBDIR#
 
-debian/dkms/patches/*                         usr/src/#DRIVERNAME#-#VERSION#/patches
+debian/dkms/patches                           usr/src/#DRIVERNAME#-#VERSION#
 debian/dkms.conf                              usr/src/#DRIVERNAME#-#VERSION#
 debian/temp/modules/nvidia-kernel/nv/*        usr/src/#DRIVERNAME#-#VERSION#
 
