@@ -1,8 +1,8 @@
-nvidia-graphics-drivers-96 (96.43.20-0ubuntu1~natty2) UNRELEASED; urgency=low
+nvidia-graphics-drivers-96 (96.43.20-0ubuntu1~natty2) natty-proposed; urgency=low
 
-  * 
+  * Put back in nvidia-2.6.36-ioctl.patch to fix FTBFS.
 
- -- Alberto Milone <alberto.milone@canonical.com>  Mon, 01 Aug 2011 19:12:18 +0200
+ -- Alberto Milone <alberto.milone@canonical.com>  Mon, 01 Aug 2011 19:13:43 +0200
 
 nvidia-graphics-drivers-96 (96.43.20-0ubuntu1~natty1) natty-proposed; urgency=low
 
