@@ -21,7 +21,10 @@ set -e
 
 case "$1" in
     remove|purge)
-
+        # This should make sure that /usr/lib/nvidia-96 and
+        # /usr/lib32/nvidia-96 are removed even if some
+        # links are left. See LP: #540143
+        rm -Rf /usr/lib/nvidia-96 /usr/lib32/nvidia-96
     ;;
     
     upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)

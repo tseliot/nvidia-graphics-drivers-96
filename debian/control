@@ -33,33 +33,11 @@ Description: NVIDIA binary Xorg driver, kernel module and VDPAU library
  
 Package: nvidia-96-dev
 Architecture: i386 amd64 lpia
-Depends: nvidia-96 (>= 96.43.19)
+Depends: nvidia-96 (>= 96.43.20)
 Description: NVIDIA binary Xorg driver development files
  This package contains the NVIDIA binary Xorg driver
  development files.
  .
  For more information on this source package visit NVIDIA's homepage
  at http://www.nvidia.com/ .
-
-Package: nvidia-glx-96
-Architecture: i386 amd64 lpia
-Depends: nvidia-96
-Description: Transitional package for nvidia-glx-96
- This is a transitional package for nvidia-glx-96, and can be safely removed
- after the installation is complete.
-
-Package: nvidia-glx-96-dev
-Architecture: i386 amd64 lpia
-Depends: nvidia-96-dev
-Description: Transitional package for nvidia-glx-96-dev
- This is a transitional package for nvidia-glx-96-dev, and can be safely removed
- after the installation is complete.
- 
-Package: nvidia-96-kernel-source
-Architecture: i386 amd64 lpia
-Depends: nvidia-96
-Description: Transitional package for nvidia-glx-96-kernel-source
- This is a transitional package for nvidia-glx-96-kernel-source, and can be
- safely removed after the installation is complete.
-
 
