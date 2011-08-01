@@ -108,9 +108,7 @@ case "$1" in
         update-alternatives --force \
             --install #SYSCONFDIR#/ld.so.conf.d/GL.conf gl_conf #LDSOCONF# #ALTPRIORITY# \
             --slave #MANDIR#/nvidia-xconfig.1.gz man_nvidiaxconfig.gz #MANDIR#/alt-#DRIVERNAME#-xconfig.1.gz \
-            --slave #MANDIR#/nvidia-smi.1.gz nvidia-smi.1.gz #MANDIR#/alt-#DRIVERNAME#-smi.1.gz \
             --slave #DATADIR#/applications/ubuntu-nvidia-settings.desktop nvidia_desktop #PKGDESKDIR#/ubuntu-nvidia-settings.desktop \
-            --slave #BINDIR#/nvidia-smi nvidia_smi #PKGBINDIR#/nvidia-smi \
             --slave #BINDIR#/nvidia-xconfig nvidia_xconfig #PKGBINDIR#/nvidia-xconfig \
             --slave #BINDIR#/nvidia-bug-report.sh nvidia_bug_report #PKGBINDIR#/nvidia-bug-report.sh \
             --slave #LIBDIR#/XvMCConfig xvmcconfig #PKGCONFIGDIR#/XvMCConfig \
