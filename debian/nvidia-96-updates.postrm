@@ -1,5 +1,5 @@
 #! /bin/sh
-# postrm script for nvidia-96
+# postrm script for nvidia-96-updates
 #
 # see: dh_installdeb(1)
 #
@@ -21,10 +21,10 @@ set -e
 
 case "$1" in
     remove|purge)
-        # This should make sure that /usr/lib/nvidia-96 and
-        # /usr/lib32/nvidia-96 are removed even if some
+        # This should make sure that /usr/lib/nvidia-96-updates and
+        # /usr/lib32/nvidia-96-updates are removed even if some
         # links are left. See LP: #540143
-        rm -Rf /usr/lib/nvidia-96 /usr/lib32/nvidia-96
+        rm -Rf /usr/lib/nvidia-96-updates /usr/lib32/nvidia-96-updates
     ;;
     
     upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)

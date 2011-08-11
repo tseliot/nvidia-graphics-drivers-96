@@ -1,5 +1,5 @@
 #! /bin/sh
-# preinst script for nvidia-96
+# preinst script for nvidia-96-updates
 #
 # see: dh_installdeb(1)
 #
