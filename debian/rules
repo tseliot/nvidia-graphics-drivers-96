@@ -23,6 +23,9 @@ OTHER_ARCH := $(shell (echo "$(DEB_HOST_MULTIARCH)" | grep i386 >/dev/null) && \
 		echo "$(DEB_HOST_MULTIARCH)" | sed s/i386/x86_64/ || \
 		echo "$(DEB_HOST_MULTIARCH)" | sed s/x86_64/i386/)
 
+# Hack for pbuild
+PATH := $(PATH):/usr/sbin
+
 # Package names
 PKG_driver           := nvidia-96-updates
 PKG_driver_dev       := $(PKG_driver)-dev
