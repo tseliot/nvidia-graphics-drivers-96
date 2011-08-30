@@ -1,3 +1,9 @@
+nvidia-graphics-drivers-96-updates (96.43.20-0ubuntu2) UNRELEASED; urgency=low
+
+  * 
+
+ -- Alberto Milone <alberto.milone@canonical.com>  Tue, 30 Aug 2011 17:02:28 +0200
+
 nvidia-graphics-drivers-96-updates (96.43.20-0ubuntu1) oneiric; urgency=low
 
   * First release.
