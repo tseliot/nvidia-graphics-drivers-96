@@ -125,7 +125,7 @@ case "$1" in
             --slave #LIBDIR#/xorg/modules/drivers/nvidia_drv.so #DEB_HOST_MULTIARCH#_nvidia_drv #PKGDRIVERSDIR#/nvidia_drv.so \
             --slave #SYSCONFDIR#/modprobe.d/nvidia-graphics-drivers.conf #DEB_HOST_MULTIARCH#_nvidia_modconf #PKGLIBCONFDIR#/modprobe.conf \
             --slave #XORGEXTRA# #DEB_HOST_MULTIARCH#_xorg_extra_modules #NVIDIAEXTENSION# \
-            --slave #GRUBBLKLISTDIR#/10_$PACKAGE_NAME #DEB_HOST_MULTIARCH#_grub_fb_blacklist #PKGDATADIR#/#DRIVERNAME#.grub-gfxpayload
+            --slave #GRUBBLKLISTDIR#/10_proprietary-graphics-drivers #DEB_HOST_MULTIARCH#_grub_fb_blacklist #PKGDATADIR#/#DRIVERNAME#.grub-gfxpayload
 
         # Install just the ld.so.conf.d alternative for the secondary architecture.
         # We need only to ensure that any mesa ld.so.conf.d alternative isn't active.
