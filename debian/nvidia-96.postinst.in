@@ -124,6 +124,7 @@ case "$1" in
             --slave #AUTOSTARTDIR#/#AUTOSTARTFILE# #DEB_HOST_MULTIARCH#_nvidia-autostart.desktop #PKGDATADIR#/#AUTOSTARTFILE# \
             --slave #LIBDIR#/xorg/modules/drivers/nvidia_drv.so #DEB_HOST_MULTIARCH#_nvidia_drv #PKGDRIVERSDIR#/nvidia_drv.so \
             --slave #SYSCONFDIR#/modprobe.d/nvidia-graphics-drivers.conf #DEB_HOST_MULTIARCH#_nvidia_modconf #PKGLIBCONFDIR#/modprobe.conf \
+            --slave #DATADIR#/initramfs-tools/conf-hooks.d/proprietary-graphics-drivers #DEB_HOST_MULTIARCH#_initramfs-hook #PKGLIBCONFDIR#/initramfs-hook \
             --slave #XORGEXTRA# #DEB_HOST_MULTIARCH#_xorg_extra_modules #NVIDIAEXTENSION# \
             --slave #GRUBBLKLISTDIR#/10_proprietary-graphics-drivers #DEB_HOST_MULTIARCH#_grub_fb_blacklist #PKGDATADIR#/#DRIVERNAME#.grub-gfxpayload
 
