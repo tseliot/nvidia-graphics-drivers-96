@@ -124,6 +124,7 @@ case "$1" in
             --slave /etc/xdg/autostart/nvidia-autostart.desktop x86_64-linux-gnu_nvidia-autostart.desktop /usr/share/nvidia-96-updates/nvidia-autostart.desktop \
             --slave /usr/lib/xorg/modules/drivers/nvidia_drv.so x86_64-linux-gnu_nvidia_drv /usr/lib/nvidia-96-updates/xorg/nvidia_drv.so \
             --slave /etc/modprobe.d/nvidia-graphics-drivers.conf x86_64-linux-gnu_nvidia_modconf /lib/nvidia-96-updates/modprobe.conf \
+            --slave /usr/share/initramfs-tools/conf-hooks.d/proprietary-graphics-drivers x86_64-linux-gnu_initramfs-hook /lib/nvidia-96-updates/initramfs-hook \
             --slave /usr/lib/x86_64-linux-gnu/xorg/extra-modules x86_64-linux-gnu_xorg_extra_modules /usr/lib/nvidia-96-updates/xorg \
             --slave /usr/share/grub-gfxpayload-lists/blacklist/10_proprietary-graphics-drivers x86_64-linux-gnu_grub_fb_blacklist /usr/share/nvidia-96-updates/nvidia-96-updates.grub-gfxpayload
 
