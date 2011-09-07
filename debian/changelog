@@ -1,8 +1,12 @@
-nvidia-graphics-drivers-96-updates (96.43.20-0ubuntu3) UNRELEASED; urgency=low
+nvidia-graphics-drivers-96-updates (96.43.20-0ubuntu3) oneiric; urgency=low
 
-  * 
+  * debian/rules:
+    - Remove trailing spaces.
+    - Blacklist the updates flavours in modprobe.conf.
+    - Add an initramfs hook to make sure that nothings else loads
+      open graphics drivers in the initramfs (LP: #839524).
 
- -- Alberto Milone <alberto.milone@canonical.com>  Wed, 07 Sep 2011 17:20:02 +0200
+ -- Alberto Milone <alberto.milone@canonical.com>  Wed, 07 Sep 2011 17:24:46 +0200
 
 nvidia-graphics-drivers-96-updates (96.43.20-0ubuntu2) oneiric; urgency=low
 
