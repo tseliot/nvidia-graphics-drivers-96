@@ -1,8 +1,13 @@
-nvidia-graphics-drivers-96-updates (96.43.20-0ubuntu4) UNRELEASED; urgency=low
+nvidia-graphics-drivers-96-updates (96.43.20-0ubuntu4) oneiric; urgency=low
 
-  * 
+  * debian/rules:
+    - Make sure that the module alias is always correct and
+      uses underscores instead of hyphens (LP: #855396).
+    - Make the grub-gfxpayload file a template and blacklist
+      all Nvidia cards so that Grub doesn't set a framebuffer
+      which prevents recovery mode from working (LP: #854967).
 
- -- Alberto Milone <alberto.milone@canonical.com>  Fri, 30 Sep 2011 10:52:55 +0200
+ -- Alberto Milone <alberto.milone@canonical.com>  Fri, 30 Sep 2011 11:01:45 +0200
 
 nvidia-graphics-drivers-96-updates (96.43.20-0ubuntu3) oneiric; urgency=low
 
